@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('./Gradient-Background-edit-online.webp');
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat;
+    }
+
+    .signin-page {
+        background-color: #79e0a9;
+        padding: 30px;
+        width: 35%;
+        text-align: center;
+        border-radius: 12px;
+
+    }
+
+    button {
+        background: linear-gradient(135deg, #0119d2, #0072ff);
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 12px 35px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+        transition: all 0.3s ease-in-out;
+        margin-top: 25px;
+    }
+
+    input {
+        width: 90%;
+        /* 👈 Isko 100% se badal kar 90% kar dein */
+        max-width: 320px;
+        padding: 12px 20px;
+        margin: 10px 0;
+        font-size: 15px;
+        color: #333333;
+        background-color: #ffffff;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        outline: none;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+        border-color: #0072ff;
+        box-shadow: 0 0 10px rgba(0, 114, 255, 0.2);
+        background-color: #fafafa;
+    }
+
+    input::placeholder {
+        color: #999999;
+        text-transform: capitalize;
+    }
+</style>
+
+<body>
+
+
+
+
+    <div class="signin-page">
+        <h1>SIGN- IN 🤗 </h1>
+        <input id="lemail" type="text" placeholder="enter your previous email"><br><br>
+        <input type="text" placeholder="enter your previous password" name="" id="lpass"><br><br>
+        <button onclick="signin()">sign in </button>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
