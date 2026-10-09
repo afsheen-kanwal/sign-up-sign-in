@@ -1,18 +1,25 @@
 function signup() {
-    var email = document.getElementById("semail").value
-    var password = document.getElementById("spass").value
-    var recovery = document.getElementById('sremail').value
-    localStorage.setItem('Email', email)
-    localStorage.setItem('Password', password)
-    localStorage.setItem('Re-email', recovery)
+    var email = document.getElementById("semail").value;
+    var password = document.getElementById("spass").value;
+    var recovery = document.getElementById('sremail').value;
+    
+    if (email === "" || password === "") {
+        alert("Please fill in all required fields!");
+        return;
+    }
+
+    localStorage.setItem('Email', email);
+    localStorage.setItem('Password', password);
+    localStorage.setItem('Re-email', recovery);
 
     alert("Sign-up successful!");
-    location.href = './signin.html'
+    location.href = './signin.html';
 }
 
 function signin() {
-    var email = document.getElementById('lemail').value
-    var password = document.getElementById('lpass').value
+    var email = document.getElementById('lemail').value;
+    var password = document.getElementById('lpass').value;
+    
     if (localStorage.getItem('Email') === email && localStorage.getItem('Password') === password) {
         location.href = "./welcome.html";
     } else {
@@ -20,18 +27,14 @@ function signin() {
     }
 }
 
+// Welcome page par user ka email dikhane ke liye logic
 var loggedInUser = localStorage.getItem('Email');
+var displayEl = document.getElementById('displayEmail');
 
-if (loggedInUser) {
-    document.getElementById('displayEmail').innerText = "Logged in as: " + loggedInUser;
-} else {
-    document.getElementById('displayEmail').innerText = "Logged in as: Guest";
+if (displayEl) {
+    if (loggedInUser) {
+        displayEl.innerText = "Logged in as: " + loggedInUser;
+    } else {
+        displayEl.innerText = "Logged in as: Guest";
+    }
 }
-
-
-
-
-
-
-
-
